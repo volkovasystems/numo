@@ -5,15 +5,15 @@
 		"passes": 1,
 		"pending": 0,
 		"failures": 0,
-		"start": "2017-08-01T12:55:07.521Z",
-		"end": "2017-08-01T12:55:07.530Z",
-		"duration": 9
+		"start": "2017-08-01T15:13:52.979Z",
+		"end": "2017-08-01T15:13:53.004Z",
+		"duration": 25
 	},
 	"tests": [
 		{
 			"title": "should return Digit instance",
 			"fullTitle": "numo `numo( 123 )` should return Digit instance",
-			"duration": 2,
+			"duration": 11,
 			"currentRetry": 0,
 			"err": {}
 		}
@@ -24,7 +24,7 @@
 		{
 			"title": "should return Digit instance",
 			"fullTitle": "numo `numo( 123 )` should return Digit instance",
-			"duration": 2,
+			"duration": 11,
 			"currentRetry": 0,
 			"err": {}
 		}
