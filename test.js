@@ -1,7 +1,7 @@
 "use strict";
 
 /*;
-	@module-license:
+	@test-license:
 		The MIT License (MIT)
 		@mit-license
 
@@ -25,65 +25,65 @@
 		LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 		OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 		SOFTWARE.
-	@end-module-license
+	@end-test-license
 
-	@module-configuration:
+	@test-configuration:
 		{
 			"package": "numo",
-			"path": "numo/numo.js",
-			"file": "numo.js",
-			"module": "numo",
+			"path": "numo/test.module.js",
+			"file": "test.module.js",
+			"module": "test",
 			"author": "Richeve S. Bebedor",
 			"eMail": "richeve.bebedor@gmail.com",
-			"contributors": [
-				"John Lenon Maghanoy <johnlenonmaghanoy@gmail.com>",
-				"Vinse Vinalon <vinsevinalon@gmail.com>"
-			],
-			"repository": "https://github.com/volkovasystems/numo.git",
-			"test": "numo-test.js",
-			"global": true
+			"repository": "https://github.com/volkovasystems/numo.git"
 		}
-	@end-module-configuration
+	@end-test-configuration
 
-	@module-documentation:
-		Number object class wrapper.
-	@end-module-documentation
+	@test-documentation:
+
+	@end-test-documentation
 
 	@include:
 		{
-			"ehm": "ehm",
-			"harden": "harden"
+			"assert": "should",
+			"numo": "numo"
 		}
 	@end-include
 */
 
-const harden = require( "harden" );
-
-const Meta = require( "ehm" )( );
+const assert = require( "should" );
 
 //: @server:
-const Digit = require( "./digit.js" );
+const numo = require( "./numo.js" );
 //: @end-server
 
 
 
-const numo = function numo( entity ){
-	/*;
-		@meta-configuration:
-			{
-				"entity:required": "number"
-			}
-		@end-meta-configuration
-	*/
 
-	if( typeof entity != "number" ){
-		throw new Error( "invalid number entity" );
-	}
 
-	return Meta.create( Digit, entity );
-};
 
-harden( "Digit", Digit, numo );
-harden( "Digit", Digit, Meta );
+//: @server:
 
-module.exports = numo;
+describe( "numo", ( ) => {
+
+	describe( "`numo( 123 )`", ( ) => {
+		it( "should return Digit instance", ( ) => {
+			let data = numo( 123 );
+
+			assert.equal( typeof data, "object" );
+
+			assert.equal( data.constructor.name, "Digit" );
+
+			assert.equal( data.valueOf( ), 123 );
+		} );
+	} );
+
+} );
+
+//: @end-server
+
+
+
+
+
+

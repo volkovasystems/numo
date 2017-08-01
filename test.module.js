@@ -70,16 +70,15 @@ const path = require( "path" );
 
 describe( "numo", ( ) => {
 
-	describe( "`numo( )`", ( ) => {
+	describe( "`numo( 123 )`", ( ) => {
 		it( "should return Digit instance", ( ) => {
-			let data = numo( );
+			let data = numo( 123 );
 
 			assert.equal( typeof data, "object" );
 
 			assert.equal( data.constructor.name, "Digit" );
 
-			assert.equal( data.valueOf( ), Number );
-
+			assert.equal( data.valueOf( ), 123 );
 		} );
 	} );
 
@@ -92,15 +91,15 @@ describe( "numo", ( ) => {
 
 describe( "numo", ( ) => {
 
-	describe( "`numo( )`", ( ) => {
+	describe( "`numo( 123 )`", ( ) => {
 		it( "should return Digit instance", ( ) => {
-			let data = numo( );
+			let data = numo( 123 );
 
 			assert.equal( typeof data, "object" );
 
 			assert.equal( data.constructor.name, "Digit" );
 
-			assert.equal( data.valueOf( ), Number );
+			assert.equal( data.valueOf( ), 123 );
 		} );
 	} );
 
@@ -115,16 +114,15 @@ describe( "numo", ( ) => {
 
 	let bridgeURL = `file://${ path.resolve( __dirname, "bridge.html" ) }`;
 
-	describe( "`numo( )`", ( ) => {
+	describe( "`numo( 123 )`", ( ) => {
 		it( "should return Digit instance", ( ) => {
 			//: @ignore:
-			assert.equal( browser.url( bridgeURL ).execute( function( ){ return typeof numo( ); } ).value, "object" );
+			assert.equal( browser.url( bridgeURL ).execute( function( ){ return typeof numo( 123 ); } ).value, "object" );
 			//: @end-ignore
 
-			assert.equal( browser.url( bridgeURL ).execute( ( ) => numo( ).constructor.name ).value, "Digit" );
+			assert.equal( browser.url( bridgeURL ).execute( ( ) => numo( 123 ).constructor.name ).value, "Digit" );
 
-			assert.equal( browser.url( bridgeURL ).execute( ( ) => `${ numo( ).valueOf( ) }` ).value, "Number" );
-
+			assert.equal( browser.url( bridgeURL ).execute( ( ) => `${ numo( 123 ).valueOf( ) }` ).value, 123 );
 		} );
 	} );
 

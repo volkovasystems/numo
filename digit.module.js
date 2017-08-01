@@ -36,8 +36,7 @@
 			"author": "Richeve S. Bebedor",
 			"eMail": "richeve.bebedor@gmail.com",
 			"contributors": [
-				"John Lenon Maghanoy <johnlenonmaghanoy@gmail.com>",
-				"Vinse Vinalon <vinsevinalon@gmail.com>"
+				"John Lenon Maghanoy <johnlenonmaghanoy@gmail.com>"
 			],
 			"repository": "https://github.com/volkovasystems/numo.git",
 			"test": "numo-test.js",
@@ -60,16 +59,18 @@
 
 const Meta = require( "ehm" )( );
 
-const EMPTY_STRING = "";
-const DIGIT = Number;
-const SERIALIZE_DIGIT_TAG = "[object Number:Number]";
-const META_SERIALIZE_DIGIT_TAG = Meta.create( DIGIT ).serialize( );
+const NUMBER_NAME = "Number";
+const NUMBER_TYPE = "number";
+
+const SERIALIZE_NUMBER_TAG_PATTERN = /^\[number Number(?:\:(.+?))?\]$/;
 
 class Digit extends Meta {
 	static [ Symbol.hasInstance ]( instance ){
 		return (
-			instance === DIGIT ||
-			Meta.instanceOf( instance, this )
+			typeof instance == NUMBER_TYPE
+			|| instance instanceof Number
+			|| typeof instance == "function" && instance.name === NUMBER_NAME
+			|| Meta.instanceOf( instance, this )
 		);
 	}
 
@@ -84,27 +85,52 @@ class Digit extends Meta {
 			@end-meta-configuration
 		*/
 
-		return Meta.create( this, DIGIT );
+		let entity = Meta.deserialize( data, parser, this );
+
+		if( entity.isCorrupted( ) ){
+			return entity.revert( );
+		}
+
+		return entity;
 	}
 
-	constructor( ){
-		super( DIGIT, "Digit" );
+	static isCompatible( tag ){
+		/*;
+			@meta-configuration:
+				{
+					"tag": "string"
+				}
+			@end-meta-configuration
+		*/
+
+		if( typeof tag != "string" ){
+			return false;
+		}
+
+		return SERIALIZE_NUMBER_TAG_PATTERN.test( tag );
 	}
 
-	get [ Meta.OBJECT ]( ){
-		return EMPTY_STRING;
+	constructor( entity ){
+		super( entity, NUMBER_NAME );
+	}
+
+	check( entity ){
+		return (
+			typeof entity == NUMBER_TYPE
+			|| entity instanceof Number
+		);
 	}
 
 	get [ Meta.BOOLEAN ]( ){
-		return false;
+		return !isNaN( this.valueOf( ) );
 	}
 
 	get [ Meta.STRING ]( ){
-		return EMPTY_STRING;
+		return `${ this.valueOf( ) }`;
 	}
 
 	get [ Meta.NUMBER ]( ){
-		return 0;
+		return this.valueOf( );
 	}
 
 	serialize( parser ){
@@ -116,14 +142,7 @@ class Digit extends Meta {
 			@end-meta-configuration
 		*/
 
-		return SERIALIZE_DIGIT_TAG;
-	}
-
-	isCompatible( tag ){
-		return (
-			tag === SERIALIZE_DIGIT_TAG
-			|| tag === META_SERIALIZE_DIGIT_TAG
-		);
+		return Meta.create( this.valueOf( ) ).serialize( parser );
 	}
 }
 

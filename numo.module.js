@@ -69,8 +69,20 @@ const Digit = require( "./digit.js" );
 const Digit = require( "./digit.support.js" );
 //: @end-client
 
-const numo = function numo( ){
-	return Meta.create( Digit, digit );
+const numo = function numo( entity ){
+	/*;
+		@meta-configuration:
+			{
+				"entity:required": "number"
+			}
+		@end-meta-configuration
+	*/
+
+	if( typeof entity != "number" ){
+		throw new Error( "invalid number entity" );
+	}
+
+	return Meta.create( Digit, entity );
 };
 
 harden( "Digit", Digit, numo );
