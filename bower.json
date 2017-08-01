@@ -21,12 +21,5 @@
 		"bower_components",
 		"test",
 		"tests"
-	],
-	"resolutions": {
-		"harden": "^0.23.0"
-	},
-	"dependencies": {
-		"ehm": "^0.18.0",
-		"harden": "^0.23.0"
-	}
+	]
 }
