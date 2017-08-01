@@ -1,0 +1,32 @@
+{
+	"stats": {
+		"suites": 2,
+		"tests": 1,
+		"passes": 1,
+		"pending": 0,
+		"failures": 0,
+		"start": "2017-08-01T11:40:08.135Z",
+		"end": "2017-08-01T11:40:08.141Z",
+		"duration": 6
+	},
+	"tests": [
+		{
+			"title": "should return Digit instance",
+			"fullTitle": "numo `numo( 123 )` should return Digit instance",
+			"duration": 2,
+			"currentRetry": 0,
+			"err": {}
+		}
+	],
+	"pending": [],
+	"failures": [],
+	"passes": [
+		{
+			"title": "should return Digit instance",
+			"fullTitle": "numo `numo( 123 )` should return Digit instance",
+			"duration": 2,
+			"currentRetry": 0,
+			"err": {}
+		}
+	]
+}

@@ -1,0 +1,84 @@
+{
+	"state": {
+		"passed": 1,
+		"failed": 0,
+		"skipped": 0
+	},
+	"start": "2017-08-01T11:40:09.947Z",
+	"end": "2017-08-01T11:40:34.128Z",
+	"capabilities": {
+		"browserName": "chrome",
+		"chromeOptions": {
+			"args": [
+				"disable-gpu",
+				"headless"
+			]
+		},
+		"proxy": null
+	},
+	"host": "127.0.0.1",
+	"port": 4444,
+	"baseUrl": "http://localhost",
+	"framework": "mocha",
+	"mochaOpts": {
+		"timeout": 10000,
+		"ui": "bdd"
+	},
+	"suites": [
+		{
+			"name": "numo",
+			"duration": 0,
+			"start": "2017-08-01T11:40:32.299Z",
+			"tests": [],
+			"hooks": []
+		},
+		{
+			"name": "numo",
+			"duration": 1646,
+			"start": "2017-08-01T11:40:32.300Z",
+			"end": "2017-08-01T11:40:33.946Z",
+			"tests": [],
+			"hooks": [
+				{
+					"start": "2017-08-01T11:40:32.302Z",
+					"end": "2017-08-01T11:40:32.302Z",
+					"duration": 0,
+					"title": "\"before each\" hook",
+					"associatedSuite": "numo",
+					"associatedTest": "should return Digit instance"
+				},
+				{
+					"start": "2017-08-01T11:40:33.944Z",
+					"end": "2017-08-01T11:40:33.945Z",
+					"duration": 1,
+					"title": "\"after each\" hook",
+					"associatedSuite": "numo",
+					"associatedTest": "should return Digit instance"
+				},
+				{
+					"start": "2017-08-01T11:40:33.946Z",
+					"end": "2017-08-01T11:40:33.946Z",
+					"duration": 0,
+					"title": "\"after all\" hook",
+					"associatedSuite": "numo"
+				}
+			]
+		},
+		{
+			"name": "`numo( 123 )`",
+			"duration": 1644,
+			"start": "2017-08-01T11:40:32.301Z",
+			"end": "2017-08-01T11:40:33.945Z",
+			"tests": [
+				{
+					"name": "should return Digit instance",
+					"start": "2017-08-01T11:40:32.302Z",
+					"end": "2017-08-01T11:40:33.944Z",
+					"duration": 1642,
+					"state": "pass"
+				}
+			],
+			"hooks": []
+		}
+	]
+}
