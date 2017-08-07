@@ -1,6 +1,6 @@
 {
 	"name": "numo",
-	"version": "0.2.0",
+	"version": "0.3.0",
 	"description": "Number object class wrapper.",
 	"main": "numo.deploy.js",
 	"support": "numo.support.js",
@@ -22,11 +22,8 @@
 		"test",
 		"tests"
 	],
-	"resolutions": {
-		"harden": "^0.23.0"
-	},
 	"dependencies": {
-		"ehm": "^0.20.0",
+		"ehm": "^0.21.0",
 		"harden": "^0.23.0"
 	}
 }

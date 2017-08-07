@@ -4,8 +4,8 @@
 		"failed": 0,
 		"skipped": 0
 	},
-	"start": "2017-08-02T17:44:48.378Z",
-	"end": "2017-08-02T17:45:08.137Z",
+	"start": "2017-08-07T13:48:47.277Z",
+	"end": "2017-08-07T13:49:28.824Z",
 	"capabilities": {
 		"browserName": "chrome",
 		"chromeOptions": {
@@ -28,37 +28,37 @@
 		{
 			"name": "numo",
 			"duration": 0,
-			"start": "2017-08-02T17:45:07.203Z",
+			"start": "2017-08-07T13:49:27.048Z",
 			"tests": [],
 			"hooks": []
 		},
 		{
 			"name": "numo",
-			"duration": 748,
-			"start": "2017-08-02T17:45:07.204Z",
-			"end": "2017-08-02T17:45:07.952Z",
+			"duration": 1594,
+			"start": "2017-08-07T13:49:27.048Z",
+			"end": "2017-08-07T13:49:28.642Z",
 			"tests": [],
 			"hooks": [
 				{
-					"start": "2017-08-02T17:45:07.205Z",
-					"end": "2017-08-02T17:45:07.205Z",
+					"start": "2017-08-07T13:49:27.050Z",
+					"end": "2017-08-07T13:49:27.050Z",
 					"duration": 0,
 					"title": "\"before each\" hook",
 					"associatedSuite": "numo",
 					"associatedTest": "should return Digit instance"
 				},
 				{
-					"start": "2017-08-02T17:45:07.951Z",
-					"end": "2017-08-02T17:45:07.951Z",
+					"start": "2017-08-07T13:49:28.641Z",
+					"end": "2017-08-07T13:49:28.641Z",
 					"duration": 0,
 					"title": "\"after each\" hook",
 					"associatedSuite": "numo",
 					"associatedTest": "should return Digit instance"
 				},
 				{
-					"start": "2017-08-02T17:45:07.952Z",
-					"end": "2017-08-02T17:45:07.953Z",
-					"duration": 1,
+					"start": "2017-08-07T13:49:28.642Z",
+					"end": "2017-08-07T13:49:28.642Z",
+					"duration": 0,
 					"title": "\"after all\" hook",
 					"associatedSuite": "numo"
 				}
@@ -66,15 +66,15 @@
 		},
 		{
 			"name": "`numo( 123 )`",
-			"duration": 748,
-			"start": "2017-08-02T17:45:07.204Z",
-			"end": "2017-08-02T17:45:07.952Z",
+			"duration": 1593,
+			"start": "2017-08-07T13:49:27.049Z",
+			"end": "2017-08-07T13:49:28.642Z",
 			"tests": [
 				{
 					"name": "should return Digit instance",
-					"start": "2017-08-02T17:45:07.205Z",
-					"end": "2017-08-02T17:45:07.951Z",
-					"duration": 746,
+					"start": "2017-08-07T13:49:27.049Z",
+					"end": "2017-08-07T13:49:28.641Z",
+					"duration": 1592,
 					"state": "pass"
 				}
 			],
