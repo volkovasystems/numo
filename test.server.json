@@ -1,19 +1,40 @@
 {
 	"stats": {
-		"suites": 2,
-		"tests": 1,
-		"passes": 1,
+		"suites": 5,
+		"tests": 4,
+		"passes": 4,
 		"pending": 0,
 		"failures": 0,
-		"start": "2017-08-07T13:48:46.106Z",
-		"end": "2017-08-07T13:48:46.112Z",
-		"duration": 6
+		"start": "2017-09-14T04:54:17.005Z",
+		"end": "2017-09-14T04:54:17.013Z",
+		"duration": 8
 	},
 	"tests": [
 		{
 			"title": "should return Digit instance",
 			"fullTitle": "numo `numo( 123 )` should return Digit instance",
 			"duration": 2,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should return string type",
+			"fullTitle": "numo `numo( 123 ).toString( )` should return string type",
+			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should return boolean type",
+			"fullTitle": "numo `numo( 123 ).toBoolean( )` should return boolean type",
+			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should return object type",
+			"fullTitle": "numo `numo( 123 ).toObject( )` should return object type",
+			"duration": 1,
 			"currentRetry": 0,
 			"err": {}
 		}
@@ -25,6 +46,27 @@
 			"title": "should return Digit instance",
 			"fullTitle": "numo `numo( 123 )` should return Digit instance",
 			"duration": 2,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should return string type",
+			"fullTitle": "numo `numo( 123 ).toString( )` should return string type",
+			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should return boolean type",
+			"fullTitle": "numo `numo( 123 ).toBoolean( )` should return boolean type",
+			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should return object type",
+			"fullTitle": "numo `numo( 123 ).toObject( )` should return object type",
+			"duration": 1,
 			"currentRetry": 0,
 			"err": {}
 		}

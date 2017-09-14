@@ -45,13 +45,13 @@
 
 	@include:
 		{
-			"assert": "should",
+			"assert": "should/as-function",
 			"numo": "numo"
 		}
 	@end-include
 */
 
-const assert = require( "should" );
+const assert = require( "should/as-function" );
 
 //: @server:
 const numo = require( "./numo.js" );
@@ -75,6 +75,34 @@ describe( "numo", ( ) => {
 			assert.equal( data.constructor.name, "Digit" );
 
 			assert.equal( data.valueOf( ), 123 );
+		} );
+	} );
+
+	describe( "`numo( 123 ).toString( )`", ( ) => {
+		it( "should return string type", ( ) => {
+			assert.equal( typeof numo( 123 ).toString( ), "string" );
+		} );
+	} );
+
+	describe( "`numo( 123 ).toBoolean( )`", ( ) => {
+		it( "should return boolean type", ( ) => {
+			assert.equal( typeof numo( 123 ).toBoolean( ), "boolean" );
+		} );
+	} );
+
+	describe( "`numo( 123 ).toObject( )`", ( ) => {
+		it( "should return object type", ( ) => {
+			let descriptor = numo( 123 ).toObject( );
+
+			assert.equal( typeof descriptor, "object" );
+
+			assert.equal( "type" in descriptor, true );
+
+			assert.equal( "name" in descriptor, true );
+
+			assert.equal( "value" in descriptor, true );
+
+			assert.equal( "format" in descriptor, true );
 		} );
 	} );
 

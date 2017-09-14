@@ -1,11 +1,11 @@
 {
 	"state": {
-		"passed": 1,
+		"passed": 4,
 		"failed": 0,
 		"skipped": 0
 	},
-	"start": "2017-08-07T13:48:47.277Z",
-	"end": "2017-08-07T13:49:28.824Z",
+	"start": "2017-09-14T04:54:18.677Z",
+	"end": "2017-09-14T04:54:55.107Z",
 	"capabilities": {
 		"browserName": "chrome",
 		"chromeOptions": {
@@ -28,36 +28,84 @@
 		{
 			"name": "numo",
 			"duration": 0,
-			"start": "2017-08-07T13:49:27.048Z",
+			"start": "2017-09-14T04:54:53.950Z",
 			"tests": [],
 			"hooks": []
 		},
 		{
 			"name": "numo",
-			"duration": 1594,
-			"start": "2017-08-07T13:49:27.048Z",
-			"end": "2017-08-07T13:49:28.642Z",
+			"duration": 981,
+			"start": "2017-09-14T04:54:53.950Z",
+			"end": "2017-09-14T04:54:54.931Z",
 			"tests": [],
 			"hooks": [
 				{
-					"start": "2017-08-07T13:49:27.050Z",
-					"end": "2017-08-07T13:49:27.050Z",
-					"duration": 0,
+					"start": "2017-09-14T04:54:53.951Z",
+					"end": "2017-09-14T04:54:53.952Z",
+					"duration": 1,
 					"title": "\"before each\" hook",
 					"associatedSuite": "numo",
 					"associatedTest": "should return Digit instance"
 				},
 				{
-					"start": "2017-08-07T13:49:28.641Z",
-					"end": "2017-08-07T13:49:28.641Z",
+					"start": "2017-09-14T04:54:54.762Z",
+					"end": "2017-09-14T04:54:54.762Z",
 					"duration": 0,
 					"title": "\"after each\" hook",
 					"associatedSuite": "numo",
 					"associatedTest": "should return Digit instance"
 				},
 				{
-					"start": "2017-08-07T13:49:28.642Z",
-					"end": "2017-08-07T13:49:28.642Z",
+					"start": "2017-09-14T04:54:54.763Z",
+					"end": "2017-09-14T04:54:54.764Z",
+					"duration": 1,
+					"title": "\"before each\" hook",
+					"associatedSuite": "numo",
+					"associatedTest": "should return string type"
+				},
+				{
+					"start": "2017-09-14T04:54:54.816Z",
+					"end": "2017-09-14T04:54:54.816Z",
+					"duration": 0,
+					"title": "\"after each\" hook",
+					"associatedSuite": "numo",
+					"associatedTest": "should return string type"
+				},
+				{
+					"start": "2017-09-14T04:54:54.817Z",
+					"end": "2017-09-14T04:54:54.817Z",
+					"duration": 0,
+					"title": "\"before each\" hook",
+					"associatedSuite": "numo",
+					"associatedTest": "should return boolean type"
+				},
+				{
+					"start": "2017-09-14T04:54:54.876Z",
+					"end": "2017-09-14T04:54:54.876Z",
+					"duration": 0,
+					"title": "\"after each\" hook",
+					"associatedSuite": "numo",
+					"associatedTest": "should return boolean type"
+				},
+				{
+					"start": "2017-09-14T04:54:54.876Z",
+					"end": "2017-09-14T04:54:54.876Z",
+					"duration": 0,
+					"title": "\"before each\" hook",
+					"associatedSuite": "numo",
+					"associatedTest": "should return object type"
+				},
+				{
+					"start": "2017-09-14T04:54:54.929Z",
+					"end": "2017-09-14T04:54:54.931Z",
+					"duration": 2,
+					"title": "\"after each\" hook",
+					"associatedSuite": "numo",
+					"associatedTest": "should return object type"
+				},
+				{
+					"start": "2017-09-14T04:54:54.931Z",
+					"end": "2017-09-14T04:54:54.931Z",
 					"duration": 0,
 					"title": "\"after all\" hook",
 					"associatedSuite": "numo"
@@ -66,15 +114,63 @@
 		},
 		{
 			"name": "`numo( 123 )`",
-			"duration": 1593,
-			"start": "2017-08-07T13:49:27.049Z",
-			"end": "2017-08-07T13:49:28.642Z",
+			"duration": 812,
+			"start": "2017-09-14T04:54:53.951Z",
+			"end": "2017-09-14T04:54:54.763Z",
 			"tests": [
 				{
 					"name": "should return Digit instance",
-					"start": "2017-08-07T13:49:27.049Z",
-					"end": "2017-08-07T13:49:28.641Z",
-					"duration": 1592,
+					"start": "2017-09-14T04:54:53.951Z",
+					"end": "2017-09-14T04:54:54.762Z",
+					"duration": 811,
+					"state": "pass"
+				}
+			],
+			"hooks": []
+		},
+		{
+			"name": "`numo( 123 ).toString( )`",
+			"duration": 53,
+			"start": "2017-09-14T04:54:54.763Z",
+			"end": "2017-09-14T04:54:54.816Z",
+			"tests": [
+				{
+					"name": "should return string type",
+					"start": "2017-09-14T04:54:54.763Z",
+					"end": "2017-09-14T04:54:54.816Z",
+					"duration": 53,
+					"state": "pass"
+				}
+			],
+			"hooks": []
+		},
+		{
+			"name": "`numo( 123 ).toBoolean( )`",
+			"duration": 60,
+			"start": "2017-09-14T04:54:54.816Z",
+			"end": "2017-09-14T04:54:54.876Z",
+			"tests": [
+				{
+					"name": "should return boolean type",
+					"start": "2017-09-14T04:54:54.816Z",
+					"end": "2017-09-14T04:54:54.876Z",
+					"duration": 60,
+					"state": "pass"
+				}
+			],
+			"hooks": []
+		},
+		{
+			"name": "`numo( 123 ).toObject( )`",
+			"duration": 55,
+			"start": "2017-09-14T04:54:54.876Z",
+			"end": "2017-09-14T04:54:54.931Z",
+			"tests": [
+				{
+					"name": "should return object type",
+					"start": "2017-09-14T04:54:54.876Z",
+					"end": "2017-09-14T04:54:54.929Z",
+					"duration": 53,
 					"state": "pass"
 				}
 			],
