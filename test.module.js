@@ -45,13 +45,13 @@
 
 	@include:
 		{
-			"assert": "should",
+			"assert": "should/as-function",
 			"numo": "numo"
 		}
 	@end-include
 */
 
-const assert = require( "should" );
+const assert = require( "should/as-function" );
 
 //: @server:
 const numo = require( "./numo.js" );
@@ -82,6 +82,34 @@ describe( "numo", ( ) => {
 		} );
 	} );
 
+	describe( "`numo( 123 ).toString( )`", ( ) => {
+		it( "should return string type", ( ) => {
+			assert.equal( typeof numo( 123 ).toString( ), "string" );
+		} );
+	} );
+
+	describe( "`numo( 123 ).toBoolean( )`", ( ) => {
+		it( "should return boolean type", ( ) => {
+			assert.equal( typeof numo( 123 ).toBoolean( ), "boolean" );
+		} );
+	} );
+
+	describe( "`numo( 123 ).toObject( )`", ( ) => {
+		it( "should return object type", ( ) => {
+			let descriptor = numo( 123 ).toObject( );
+
+			assert.equal( typeof descriptor, "object" );
+
+			assert.equal( "type" in descriptor, true );
+
+			assert.equal( "name" in descriptor, true );
+
+			assert.equal( "value" in descriptor, true );
+
+			assert.equal( "format" in descriptor, true );
+		} );
+	} );
+
 } );
 
 //: @end-server
@@ -100,6 +128,34 @@ describe( "numo", ( ) => {
 			assert.equal( data.constructor.name, "Digit" );
 
 			assert.equal( data.valueOf( ), 123 );
+		} );
+	} );
+
+	describe( "`numo( 123 ).toString( )`", ( ) => {
+		it( "should return string type", ( ) => {
+			assert.equal( typeof numo( 123 ).toString( ), "string" );
+		} );
+	} );
+
+	describe( "`numo( 123 ).toBoolean( )`", ( ) => {
+		it( "should return boolean type", ( ) => {
+			assert.equal( typeof numo( 123 ).toBoolean( ), "boolean" );
+		} );
+	} );
+
+	describe( "`numo( 123 ).toObject( )`", ( ) => {
+		it( "should return object type", ( ) => {
+			let descriptor = numo( 123 ).toObject( );
+
+			assert.equal( typeof descriptor, "object" );
+
+			assert.equal( "type" in descriptor, true );
+
+			assert.equal( "name" in descriptor, true );
+
+			assert.equal( "value" in descriptor, true );
+
+			assert.equal( "format" in descriptor, true );
 		} );
 	} );
 
@@ -123,6 +179,62 @@ describe( "numo", ( ) => {
 			assert.equal( browser.url( bridgeURL ).execute( ( ) => numo( 123 ).constructor.name ).value, "Digit" );
 
 			assert.equal( browser.url( bridgeURL ).execute( ( ) => `${ numo( 123 ).valueOf( ) }` ).value, 123 );
+		} );
+	} );
+
+	describe( "`numo( 123 ).toString( )`", ( ) => {
+		it( "should return string type", ( ) => {
+			//: @ignore:
+			let result = browser.url( bridgeURL ).execute(
+
+				function( ){
+					return typeof numo( 123 ).toString( );
+				}
+
+			).value;
+			//: @end-ignore
+
+			assert.equal( result, "string" );
+		} );
+	} );
+
+	describe( "`numo( 123 ).toBoolean( )`", ( ) => {
+		it( "should return boolean type", ( ) => {
+			//: @ignore:
+			let result = browser.url( bridgeURL ).execute(
+
+				function( ){
+					return typeof numo( 123 ).toBoolean( );
+				}
+
+			).value;
+			//: @end-ignore
+
+			assert.equal( result, "boolean" );
+		} );
+	} );
+
+	describe( "`numo( 123 ).toObject( )`", ( ) => {
+		it( "should return object type", ( ) => {
+			//: @ignore:
+			let result = browser.url( bridgeURL ).execute(
+
+				function( ){
+					let descriptor = numo( 123 ).toObject( );
+
+					let test = typeof descriptor == "object" &&
+						"type" in descriptor == true &&
+						"name" in descriptor == true &&
+						"value" in descriptor == true &&
+						"format" in descriptor == true;
+
+					return test;
+				}
+
+			).value;
+			//: @end-ignore
+
+			assert.equal( result, true );
 		} );
 	} );
 
